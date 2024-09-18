@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Cadastro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Cadastro de Usuário</h1>
+    <form id="userForm">
+      <!-- Campo de Nome -->
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" required>
+
+      <!-- Campo de Data de Nascimento -->
+      <label for="dob">Data de Nascimento:</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <!-- Botões -->
+      <button type="submit">Confirmar</button>
+      <button type="button" id="editButton" style="display: none;">Editar</button>
+      <button type="button" id="deleteButton" style="display: none;">Excluir</button>
+    </form>
+
+    <!-- Área para exibir os dados -->
+    <div id="userData" style="display:none;">
+      <h2>Dados Cadastrados:</h2>
+      <p id="displayName"></p>
+      <p id="displayAge"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
