@@ -1,6 +1,11 @@
+document.addEventListener('DOMContentLoaded', function(){
 // Função para calcular a idade com base na data de nascimento
 function calculateAge(dob) {
   const birthDate = new Date(dob);
+  if (isNaN(birthDate.getTime())) {
+    alert("Data de nascimento inválida.");
+    return null;
+  }
   const today = new Date();
   let age = today.getFullYear() - birthDate.getFullYear();
   const month = today.getMonth() - birthDate.getMonth();
@@ -47,9 +52,11 @@ document.getElementById('userForm').addEventListener('submit', function (e) {
   const dob = document.getElementById('dob').value;
   const age = calculateAge(dob);
 
+  if(age !== null){
   saveUserData(name, dob, age);
   displayUserData();
   clearForm();
+  }
 });
 
 // Evento para editar os dados
@@ -67,4 +74,7 @@ document.getElementById('deleteButton').addEventListener('click', function () {
   document.getElementById('userData').style.display = 'none';
   document.getElementById('editButton').style.display = 'none';
   document.getElementById('deleteButton').style.display = 'none';
+});
+
+displayUserData();
 });

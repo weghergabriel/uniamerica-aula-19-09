@@ -22,6 +22,7 @@ body {
 /* Estilo dos campos de entrada */
 input[type="text"],
 input[type="date"] {
+  box-sizing: border-box;
   width: 100%;
   padding: 10px;
   margin: 10px 0;
